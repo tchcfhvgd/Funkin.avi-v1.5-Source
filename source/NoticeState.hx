@@ -1,6 +1,6 @@
 package;
 
-import GameJolt.GameJoltAPI;
+
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxSubState;
@@ -32,8 +32,6 @@ class NoticeState extends MusicBeatState
 	{
 		super.create();
 
-		GameJoltAPI.connect();
-        GameJoltAPI.authDaUser(FlxG.save.data.gjUser, FlxG.save.data.gjToken);
 
 		if(ClientPrefs.funiShaders)
 					{

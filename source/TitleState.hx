@@ -1,6 +1,6 @@
 package;
 
-import GameJolt.GameJoltAPI;
+
 #if desktop
 import Discord.DiscordClient;
 import sys.thread.Thread;
@@ -43,8 +43,7 @@ import openfl.filters.ShaderFilter;
 import Shaders;
 import openfl.Assets;
 import PlayState;
-import GameJolt;
-import GameJolt.GameJoltAPI;
+
 import IndieCrossShaderShit.FXHandler;
 
 using StringTools;

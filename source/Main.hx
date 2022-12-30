@@ -109,9 +109,11 @@ class Main extends Sprite
 		FlxG.autoPause = false;
 		FlxG.mouse.visible = false;
 
+		#if desktop
 		Application.current.window.fullscreen = false;
 		Application.current.window.onFocusOut.add(onWindowFocusOut);
 		Application.current.window.onFocusIn.add(onWindowFocusIn);
+		#end
 	}
 
 	var game:FlxGame;

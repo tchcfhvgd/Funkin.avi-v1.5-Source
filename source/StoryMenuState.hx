@@ -225,9 +225,9 @@ class StoryMenuState extends MusicBeatState
 		scratchStuff.cameras = [camFilter];
 		grain.cameras = [camFilter];
 
-		#if android
+	/*	#if android
 		addVirtualPad(LEFT_FULL, A_B);
-		#end
+		#end */
 			
 		super.create();
 	}

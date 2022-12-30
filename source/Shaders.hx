@@ -835,9 +835,9 @@ class Grain extends FlxShader
 	{
 		super();
 		
-		coloramount.value = [0.05]
-grainsize.value = [1.6]
-lumamount.value = [1.0]
+		coloramount.value = [0.05];
+		grainsize.value = [1.6];
+		lumamount.value = [1.0];
 	}
 	
 	
@@ -1113,10 +1113,10 @@ void main() {
 	
 	public function new(){
 		super();
-		xrot.value = [0.0]
-yrot.value = [0.0]
-zrot.value = [0.0]
-dept.value = [0.0]
+		xrot.value = [0.0];
+		yrot.value = [0.0];
+		zrot.value = [0.0];
+		dept.value = [0.0];
 	}
 	
 }

@@ -1863,13 +1863,13 @@ class PlayState extends MusicBeatState
 		} else {
                 peWatermark.setFormat(Paths.font("Retro Gaming.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		}
-		#if desktop
+		
 		peWatermark.scrollFactor.set();
 		peWatermark.text = "Funkin.avi" + " | " + curSong + " (" + storyDifficultyText + ")";
 		peWatermark.visible = ClientPrefs.showWatermarks;
 		peWatermark.cameras = [camCustom];
 		add(peWatermark);
-		#end
+		
 
 		SCALEdebugText = new FlxText(10,10,200,"Default scale mode (ratio)");
 		SCALEdebugText.scrollFactor.set(0,0);

@@ -1,6 +1,5 @@
 
 package;
-import GameJolt.GameJoltAPI as GameJolt;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.addons.transition.FlxTransitionSprite.GraphicTransTileDiamond;
@@ -44,9 +43,6 @@ class MainLoad extends MusicBeatState
 
 	override function create()
 	{
-        GameJolt.connect();
-        GameJolt.authDaUser(FlxG.save.data.gjUser, FlxG.save.data.gjToken); //Loads GameJolt stuff
-
 		FlxG.mouse.visible = true;
 
 		FlxG.worldBounds.set(0,0);

@@ -1,7 +1,5 @@
 package;
 
-import GameJolt;
-import GameJolt.GameJoltAPI;
 import flixel.graphics.FlxGraphic;
 import flixel.FlxG;
 import flixel.FlxGame;

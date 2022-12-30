@@ -358,7 +358,7 @@ class WIBloomShader extends FlxShader // BLOOM SHADER BY BBPANZU
 		}
 		
 		Color /= (dim * Quality) * Directions - 15.0;
-		vec4 bloom =  (flixel_texture2D( bitmap, uv)/ dim)+Color;
+		vec4 bloom =  (flixel_texture2D(bitmap, uv)/ dim)+Color;
 
 		gl_FragColor = bloom;
 
@@ -715,9 +715,9 @@ class Grain extends FlxShader
 
 		const float grainamount = 0.05; //grain amount
 		bool colored = false; //colored noise?
-		uniform float coloramount = 0.6;
-		uniform float grainsize = 1.6; //grain particle size (1.5 - 2.5)
-		uniform float lumamount = 1.0; //
+		uniform float coloramount;
+		uniform float grainsize; //grain particle size (1.5 - 2.5)
+		uniform float lumamount; //
 	uniform bool lockAlpha = false;
 
 		//a random texture generator, but you can also use a pre-computed perturbation texture
@@ -834,6 +834,10 @@ class Grain extends FlxShader
 	public function new()
 	{
 		super();
+		
+		coloramount.value = [0.05]
+grainsize.value = [1.6]
+lumamount.value = [1.0]
 	}
 	
 	
@@ -920,7 +924,7 @@ class VCRDistortionShader extends FlxShader // https://www.shadertoy.com/view/ld
       	vec2 look = uv;
         if(distortionOn){
         	float window = 1./(1.+20.*(look.y-mod(iTime/4.,1.))*(look.y-mod(iTime/4.,1.)));
-        	look.x = look.x + (sin(look.y*10. + iTime)/50.*onOff(4.,4.,.3)*(1.+cos(iTime*80.))*window)*(glitchModifier*2);
+        	look.x = look.x + (sin(look.y*10. + iTime)/50.*onOff(4.,4.,.3)*(1.+cos(iTime*80.))*window)*(glitchModifier*2.);
         	float vShift = 0.4*onOff(2.,3.,.9)*(sin(iTime)*sin(iTime*20.) +
         										 (0.5 + 0.1*sin(iTime*200.)*cos(iTime)));
         	look.y = mod(look.y + vShift*glitchModifier, 1.);
@@ -1003,7 +1007,7 @@ class VCRDistortionShader extends FlxShader // https://www.shadertoy.com/view/ld
 
       gl_FragColor = mix(video,vec4(noise(uv * 75.)),.05);
 
-      if(curUV.x<0 || curUV.x>1 || curUV.y<0 || curUV.y>1){
+      if(curUV.x<0. || curUV.x>1. || curUV.y<0. || curUV.y>1.){
         gl_FragColor = vec4(0,0,0,0);
       }
 
@@ -1035,10 +1039,10 @@ class ThreeDEffect extends Effect{
 class ThreeDShader extends FlxShader{
 	@:glFragmentSource('
 	#pragma header
-	uniform float xrot = 0.0;
-	uniform float yrot = 0.0;
-	uniform float zrot = 0.0;
-	uniform float dept = 0.0;
+	uniform float xrot;
+	uniform float yrot;
+	uniform float zrot;
+	uniform float dept;
 	float alph = 0;
 float plane( in vec3 norm, in vec3 po, in vec3 ro, in vec3 rd ) {
     float de = dot(norm, rd);
@@ -1109,6 +1113,10 @@ void main() {
 	
 	public function new(){
 		super();
+		xrot.value = [0.0]
+yrot.value = [0.0]
+zrot.value = [0.0]
+dept.value = [0.0]
 	}
 	
 }

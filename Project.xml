@@ -32,6 +32,8 @@
 	<window if="desktop" orientation="landscape" fullscreen="false" resizable="true" vsync="false"/>
 
 	<!--Mobile-specific-->
+	<define name="mobileC" if="mobile" />
+	<assets path="assets/shared/images/hitbox"/>
 	<window if="mobile" orientation="landscape" fullscreen="true" width="0" height="0" resizable="false"/>
 
 	<!--Switch-specific-->

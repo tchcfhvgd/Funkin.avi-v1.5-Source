@@ -429,6 +429,10 @@ class MainMenuState extends MusicBeatState
 		scratchStuff.cameras = [camFilter];
 		grain.cameras = [camFilter];
 
+		#if mobileC
+		addVirtualPad(UP_DOWN, A_B);
+		#end
+
 		super.create();
 }
 

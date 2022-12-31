@@ -260,6 +260,10 @@ class EpisodesState extends MusicBeatState
 		grain.scale.y = 1.1;
 		add(grain);
 
+		#if mobileC
+		addVirtualPad(UP_DOWN, A_B);
+		#end
+
 		super.create();
 	}
 

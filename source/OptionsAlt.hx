@@ -50,8 +50,7 @@ class OptionsAlt extends MusicBeatState
 				openSubState(new options.GameplaySettingsSubState());
 			case 'Adjust Delay and Combo':
 				LoadingState.loadAndSwitchState(new options.NoteOffsetState());
-			case 'Mobile Controls':
-				FlxG.switchState(new ui.CustomControlsState);	
+			
 			/*case 'Note Skins':
 				LoadingState.loadAndSwitchState(new options.NoteSkinState());*/
 		}

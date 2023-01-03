@@ -33,11 +33,11 @@
 
 	<!--Mobile-specific-->
 	<define name="mobileC" if="mobile" />
-	<assets path="assets/shared/images/hitbox"/>
+	<assets path="assets/android" if="android"/>
 	<window if="mobile" orientation="landscape" fullscreen="true" width="0" height="0" resizable="false"/>
 
 	<!--Switch-specific-->
-	<window if="switch" orientation="landscape" fullscreen="true" width="0" height="0" resizable="true" />
+	<window if="switch" orientation="landscape" fullscreen="true" width="1280" height="720" resizable="true" />
 
 	<!-- _____________________________ Path Settings ____________________________ -->
 
@@ -48,7 +48,7 @@
 	<classpath name="source" />
 	
 	<!-- PSYCH ENGINE CUSTOMIZATION -->
-	<define name="MODS_ALLOWED" if="desktop" />
+	<define name="MODS_ALLOWED" if="desktop || android" />
 	<define name="HSCRIPT_ALLOWED" />
 	<define name="ACHIEVEMENTS_ALLOWED" />
 	<define name="VIDEOS_ALLOWED" if="web || windows" unless="32bits"/>

@@ -34,7 +34,7 @@ class BuildingShader extends FlxShader
     uniform float alphaShit;
     void main()
     {
-     #pragma body
+     
 
       vec4 color = flixel_texture2D(bitmap,openfl_TextureCoordv);
       if (color.a > 0.0)
@@ -60,7 +60,7 @@ class ChromaticAberrationShader extends FlxShader
 
 		void main()
 		{
-                        #pragma body
+                        
 			vec4 col1 = texture2D(bitmap, openfl_TextureCoordv.st - vec2(rOffset, 0.0));
 			vec4 col2 = texture2D(bitmap, openfl_TextureCoordv.st - vec2(gOffset, 0.0));
 			vec4 col3 = texture2D(bitmap, openfl_TextureCoordv.st - vec2(bOffset, 0.0));
@@ -284,7 +284,7 @@ class WIDistortionShader extends FlxShader
 
         void main()
         {
-             #pragma body
+             
 			if (working) {
 				vec2 uv = openfl_TextureCoordv;
 
@@ -345,7 +345,7 @@ class WIBloomShader extends FlxShader // BLOOM SHADER BY BBPANZU
 
 	void main(void)
 	{ 
-                #pragma body
+                
 		vec2 uv = openfl_TextureCoordv.xy ;
 
 		float Pi = 6.28318530718; // Pi*2
@@ -472,7 +472,7 @@ class VhsShader extends FlxShader {
 
     void main()
     {
-        #pragma body
+        
         vec2 uv = openfl_TextureCoordv.xy;
         uv = screenDistort(uv);
         vec4 video = getVideo(uv);
@@ -514,7 +514,7 @@ class Scanline extends FlxShader
 	uniform bool lockAlpha = false;
 		void main()
 		{
-                  #pragma body
+                  
 			if (mod(floor(openfl_TextureCoordv.y * openfl_TextureSize.y / scale), 2.0) == 0.0 ){
 				float bitch = 1.0;
 	
@@ -596,7 +596,7 @@ class Tiltshift extends FlxShader
 		const float maxOffs     = (float(steps-1.0)) / +2.0;
 		 
 		void main() {
-                       #pragma body
+                       
 			float amount;
 			vec4 blurred;
 				
@@ -650,7 +650,7 @@ class GreyscaleShader extends FlxShader{
 	@:glFragmentSource('
 	#pragma header
 	void main() {
-                  #pragma body
+                  
 		vec4 color = texture2D(bitmap, openfl_TextureCoordv);
 		float gray = dot(color.rgb, vec3(0.299, 0.587, 0.114));
 		gl_FragColor = vec4(vec3(gray), color.a);
@@ -811,7 +811,7 @@ class Grain extends FlxShader
 
 		void main()
 		{
-                        #pragma body
+                        
 			vec2 texCoord = openfl_TextureCoordv.st;
 
 			vec3 rotOffset = vec3(1.425,3.892,5.835); //rotation offset values
@@ -992,7 +992,7 @@ class VCRDistortionShader extends FlxShader // https://www.shadertoy.com/view/ld
     }
     void main()
     {
-         #pragma body
+         
     	vec2 uv = openfl_TextureCoordv;
       vec2 curUV = screenDistort(uv);
     	uv = scandistort(curUV);
@@ -1090,7 +1090,7 @@ vec2 raytraceTexturedQuad(in vec3 rayOrigin, in vec3 rayDirection, in vec3 quadC
 }
 
 void main() {
-        #pragma body
+        
 	vec4 texColor = texture2D(bitmap, openfl_TextureCoordv);
     //Screen UV goes from 0 - 1 along each axis
     vec2 screenUV = openfl_TextureCoordv;
@@ -1271,7 +1271,7 @@ class FuckingTriangle extends FlxShader{
 
 void main()
 {
-    #pragma body
+    
     vec2 ndc = ((gl_FragCoord.xy * 2.) / openfl_TextureSize.xy) - vec2(1.);
     float aspect = openfl_TextureSize.x / openfl_TextureSize.y;
     vec3 outColor = vec3(.4,.6,.9);
@@ -1602,7 +1602,7 @@ class GlitchShader extends FlxShader
 
     void main()
     {
-        #pragma body
+        
         vec2 uv = sineWave(openfl_TextureCoordv);
         gl_FragColor = texture2D(bitmap, uv);
     }')
@@ -1626,7 +1626,7 @@ class InvertShader extends FlxShader
 
     void main()
     {
-        #pragma body
+        
         vec2 uv = openfl_TextureCoordv;
         gl_FragColor = sineWave(texture2D(bitmap, uv));
 		gl_FragColor.a = 1.0 - gl_FragColor.a;
@@ -1684,7 +1684,7 @@ class DistortBGShader extends FlxShader
 
     void main()
     {
-        #pragma body
+        
         vec2 uv = sineWave(openfl_TextureCoordv);
         gl_FragColor = makeBlack(texture2D(bitmap, uv)) + texture2D(bitmap,openfl_TextureCoordv);
     }')
@@ -1740,7 +1740,7 @@ class PulseShader extends FlxShader
 
     void main()
     {
-        #pragma body
+        
         vec2 uv = openfl_TextureCoordv;
         gl_FragColor = sineWave(texture2D(bitmap, uv),uv);
     }')

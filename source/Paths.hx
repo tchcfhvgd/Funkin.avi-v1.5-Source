@@ -307,7 +307,7 @@ class Paths
 	{
 		#if MODS_ALLOWED
 		var file:String = modsFont(key);
-		if(FileSystem.exists(file)) {
+		if(Assets.exists(file)) {
 			return file;
 		}
 		#end

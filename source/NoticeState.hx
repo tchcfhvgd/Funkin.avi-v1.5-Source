@@ -104,6 +104,10 @@ class NoticeState extends MusicBeatState
 		grain.scale.x = 1.1;
 		grain.scale.y = 1.1;
 		add(grain);
+		
+		#if mobileC
+		addVirtualPad(NONE, A_B);
+		#end
 	}
 
 	function addShader(effect:ShaderEffect)

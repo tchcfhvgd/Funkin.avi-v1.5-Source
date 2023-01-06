@@ -581,15 +581,15 @@ class Tiltshift extends FlxShader
 		 
 		// I am hardcoding the constants like a jerk
 			
-		uniform float bluramount  = 1.0;
-		uniform float center      = 1.0;
-		const float stepSize    = 0.004;
-		const float steps       = 3.0;
+		uniform float bluramount;
+		uniform float center;
+		const float stepSize  = 0.004;
+		const float steps = 3.0;
 		 
 		const float minOffs     = (float(steps-1.0)) / -2.0;
 		const float maxOffs     = (float(steps-1.0)) / +2.0;
 		 
-		void main() 
+		void main() {
 			float amount;
 			vec4 blurred;
 				
@@ -624,6 +624,9 @@ class Tiltshift extends FlxShader
 	public function new()
 	{
 		super();
+		
+		bluramount.value = [1.0];
+		center.value = [1.0];
 	}
 }
 class GreyscaleEffect extends Effect{

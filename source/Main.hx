@@ -121,7 +121,7 @@ class Main extends Sprite
 	var newVol:Float = 0.3;
 
 	public static var focused:Bool = true;
-        #if desktop
+        
 	// funi Indie Cross volume code
 	function onWindowFocusOut()
 		{
@@ -184,7 +184,7 @@ class Main extends Sprite
 				FlxG.drawFramerate = 120;
 			}
 		}
-                #end
+                
 		/*function onCrash(e:UncaughtErrorEvent):Void
 			{
 				var errMsg:String = "";

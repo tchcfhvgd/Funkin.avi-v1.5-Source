@@ -589,7 +589,7 @@ class Tiltshift extends FlxShader
 		const float minOffs     = (float(steps-1.0)) / -2.0;
 		const float maxOffs     = (float(steps-1.0)) / +2.0;
 		 
-		void main() {
+		void main() 
 			float amount;
 			vec4 blurred;
 				

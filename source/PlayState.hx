@@ -3652,7 +3652,7 @@ class PlayState extends MusicBeatState
 
 		FlxTween.tween(songBanner, {alpha: 0}, 1.5, {ease: FlxEase.circIn, startDelay: 4});
 		FlxTween.tween(songBannerText, {alpha: 0}, 1.5, {ease: FlxEase.circIn, startDelay: 4});
-
+                #if desktop 
 		//for prevent curPortrait error
 		switch(curSong){
 			case "Isolated" | "Lunacy" | "Delusional": curPortrait = "placeholder";
@@ -3662,7 +3662,7 @@ class PlayState extends MusicBeatState
 			case "Cycled Sins": curPortrait = "cycledsins";
 			case "Hunted": curPortrait = "hunted";
 		}
-		
+		#end
 
 		switch(curStage)
 		{

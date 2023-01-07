@@ -261,7 +261,7 @@ class EpisodesState extends MusicBeatState
 		add(grain);
 
 		#if mobileC
-		addVirtualPad(UP_DOWN, A_B);
+		addVirtualPad(LEFT_FULL, A_B);
 		#end
 
 		super.create();

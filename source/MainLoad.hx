@@ -59,15 +59,16 @@ class MainLoad extends MusicBeatState
 		text.alignment = FlxTextAlign.CENTER;
 		text.alpha = 0;
 		add(text);
-
-		#if sys
-		for (i in HSys.readDirectory("assets/shared/images/characters"))
+              
+		#if sys 
+		//Splash Cache lol	
+		for (i in HSys.readDirectory("assets/shared/images/NoteSplashSkins"))
 		{
 			if (!i.endsWith(".png"))
 				continue;
 			images.push(i);
 		}
-
+                //Songs Cache Lol²
 		for (i in HSys.readDirectory("assets/songs"))
 		{
 			music.push(i);

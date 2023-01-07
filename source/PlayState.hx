@@ -18,6 +18,9 @@ import data.Ratings;
 import editors.CharacterEditorState;
 import editors.ChartingState;
 import flash.system.System;
+#if android
+import android.flixel.FlxVirtualPad;	
+#end	
 import flixel.FlxBasic;
 import flixel.FlxCamera;
 import flixel.FlxG;
@@ -257,6 +260,7 @@ class PlayState extends MusicBeatState
 
 	var waltText:FlxText;
 
+	var _vpad:FlxVirtualPad;
 	var halloweenBG:BGSprite;
 	var halloweenWhite:BGSprite;
 
@@ -2141,6 +2145,9 @@ class PlayState extends MusicBeatState
 		#if android
 		addAndroidControls();
 		androidControls.visible = true;
+                _vpad = new FlxVirtualPad(NONE, A);
+	        _vpad.cameras = [camHUD];
+			this.add(_vpad);
 		#end
 
 		// if (SONG.song == 'South')
@@ -4174,7 +4181,7 @@ class PlayState extends MusicBeatState
 			iconP1.swapOldIcon();
 		}
 
-		if(FlxG.keys.justPressed.SPACE && shootin && canDodge) {
+		if(FlxG.keys.justPressed.SPACE || _vpad.buttonA.justPressed && shootin && canDodge) {
 			dodged = true;
 			canDodge = false;
 			new FlxTimer().start(1, function(tmr:FlxTimer) {

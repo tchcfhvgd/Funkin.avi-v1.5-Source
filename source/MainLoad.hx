@@ -95,7 +95,7 @@ class MainLoad extends MusicBeatState
 		for (i in images)
 		{
 			var replaced = i.replace(".png","");
-			var data:BitmapData = BitmapData.fromFile("assets/shared/images/characters");
+			var data:BitmapData = BitmapData.fromFile("assets/shared/images/NoteSplashSkins");
 			var graph = FlxGraphic.fromBitmapData(data);
 			graph.persist = true;
 			graph.destroyOnNoUse = false;

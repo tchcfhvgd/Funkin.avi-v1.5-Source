@@ -56,7 +56,7 @@ class MainMenuState extends MusicBeatState
 	public var camFilter:FlxCamera;
 
 	var optionShit:Array<String> = [
-		'story_mode',
+		//'story_mode',
 		'freeplay',
 		//#if MODS_ALLOWED 'mods', #end
 		//#if ACHIEVEMENTS_ALLOWED 'awards', #end

@@ -32,9 +32,7 @@
 	<window if="desktop" orientation="landscape" fullscreen="false" resizable="true" vsync="false"/>
 
 	<!--Mobile-specific-->
-	<define name="mobileC" if="android" />
-	<assets path="assets/android" if="android"/>
-	<window if="mobile" orientation="landscape" fullscreen="true" width="0" height="0" resizable="false"/>
+	<window if="mobile" orientation="landscape" fullscreen="true" width="1280" height="720" resizable="false"/>
 
 	<!--Switch-specific-->
 	<window if="switch" orientation="landscape" fullscreen="true" width="1280" height="720" resizable="true" />
@@ -117,6 +115,7 @@
 
 	<!--In case you want to use the ui package-->
 	<haxelib name="flixel-ui" />
+	<haxelib name="extension-androidtools" if="android"/>
 	<haxelib name="linc_luajit" if="LUA_ALLOWED"/>
 	<haxelib name="faxe" if='switch'/>
 	<haxelib name="discord_rpc" if="desktop"/>
@@ -166,7 +165,8 @@
 	<haxedef name="NAPE_RELEASE_BUILD" unless="debug" />
 
 	<!-- _________________________________ Custom _______________________________ -->
-
+        <config:android permission="android.permission.READ_EXTERNAL_STORAGE" if="android"/>
+	<config:android permission="android.permission.WRITE_EXTERNAL_STORAGE" if="android"/>
 	<!--Place custom nodes like icons here (higher priority to override the HaxeFlixel icon)-->
 	
 	<icon path="art/icon16.png" size='16'/>

@@ -9,7 +9,7 @@ import Controls;
 class ClientPrefs
     {
 	public static var screenShake:Bool = true;
-    public static var language:String = "English";
+        public static var language:String = "English";
 	public static var cutscenes:Bool = false;
 	public static var FPStext:Bool = false;
 	public static var colorblind:String = "No color filter";
@@ -53,13 +53,15 @@ class ClientPrefs
 	public static var scoreZoom:Bool = true;
 	public static var noReset:Bool = false;
 	public static var healthBarAlpha:Float = 1;
-	public static var controllerMode:Bool = true;
+	public static var controllerMode:Bool = #if android true #else false #end;
 	public static var screenRes:String = '1280x720';
 	public static var fullscreen:Bool = false;
 	public static var showWatermarks:Bool = true;
 	public static var winningIcon:Bool = true;
 	public static var hitsoundVolume:Float = 0;
 	public static var restart:Bool = false;
+	public static var hitboxmode:String = 'Classic';  //starting new way to change between hitboxes yay
+	public static var hitboxalpha:Float = 0.2; 
 	public static var pauseMusic:String = 'Tea Time';
 	public static var gameplaySettings:Map<String, Dynamic> = [
 		'scrollspeed' => 1.0,
@@ -195,6 +197,9 @@ class ClientPrefs
 		FlxG.save.data.hitsoundVolume = hitsoundVolume;
 		FlxG.save.data.pauseMusic = pauseMusic;
 	
+		FlxG.save.data.hitboxmode = hitboxmode;
+		FlxG.save.data.hitboxalpha = hitboxalpha;
+		
 		FlxG.save.flush();
 
 		var save:FlxSave = new FlxSave();
@@ -234,6 +239,12 @@ class ClientPrefs
 		}
 		if(FlxG.save.data.outdated != null) {
 			outdated = FlxG.save.data.outdated;
+		}
+		if(FlxG.save.data.hitboxmode != null) {
+			hitboxmode = FlxG.save.data.hitboxmode;
+		}
+		if(FlxG.save.data.hitboxalpha != null) {
+			hitboxalpha = FlxG.save.data.hitboxalpha;
 		}
 		if(FlxG.save.data.lives != null) {
 			lives = FlxG.save.data.lives;

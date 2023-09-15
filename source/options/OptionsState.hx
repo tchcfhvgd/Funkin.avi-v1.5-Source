@@ -126,7 +126,7 @@ class OptionsState extends MusicBeatState
 		add(grain);
 		
 		#if android
-		addVirtualPad(UP_DOWN, A_B_C);
+		addVirtualPad(UP_DOWN, A_B_X_Y);
 		#end
 		
 		super.create();
@@ -156,14 +156,6 @@ class OptionsState extends MusicBeatState
 			openSelectedSubstate(options[curSelected]);
 		}
 		
-		#if android
-		if (virtualPad.buttonC.justPressed) {
-			#if android
-			removeVirtualPad();
-			#end
-			openSubState(new android.AndroidControlsSubState());
-		}
-		#end
 	}
 	
 	function changeSelection(change:Int = 0) {

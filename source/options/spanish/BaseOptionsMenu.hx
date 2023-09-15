@@ -6,6 +6,7 @@ import Discord.DiscordClient;
 import flash.text.TextField;
 import flixel.FlxG;
 import flixel.FlxSprite;
+import flixel.addons.transition.FlxTransitionableState;
 import flixel.addons.display.FlxGridOverlay;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.math.FlxMath;
@@ -169,7 +170,7 @@ class BaseOptionsMenu extends MusicBeatSubstate
 
 		if (controls.BACK) {
 			#if android
-                        flixel.addons.transition.FlxTransitionableState.skipNextTransOut = true;
+                        FlxTransitionableState.skipNextTransOut = true;		
 			FlxG.resetState();
                         #else
                         close();

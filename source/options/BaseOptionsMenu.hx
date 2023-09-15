@@ -144,7 +144,7 @@ class BaseOptionsMenu extends MusicBeatSubstate
 		add(grain);
 		
 		#if android
-		addVirtualPad(LEFT_RIGHT, A_B_X_Y);
+		addVirtualPad(UP_DOWN, A_B_X_Y);
 		addPadCamera();
 		#end
 	}

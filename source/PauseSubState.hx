@@ -223,7 +223,7 @@ class PauseSubState extends MusicBeatSubstate
 
 		changeSelection();
 
-		#if mobileC
+		#if android
 		addVirtualPad(UP_DOWN, A);
 		#end
 

@@ -2143,11 +2143,7 @@ class PlayState extends MusicBeatState
 		doof.cameras = [camHUD];
 
 		#if android
-		addAndroidControls();
-		androidControls.visible = true;
-                _vpad = new FlxVirtualPad(NONE, A);
-	        _vpad.cameras = [camHUD];
-			this.add(_vpad);
+		androidc.visible = true;
 		#end
 
 		// if (SONG.song == 'South')

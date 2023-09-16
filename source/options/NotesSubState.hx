@@ -109,11 +109,11 @@ class NotesSubState extends MusicBeatSubstate
 		grain.scale.y = 1.1;
 		add(grain);
 		
-	}
-
 	#if android
 	addVirtualPad(FULL, A_B_C);
 	#end
+	  
+	}
 	
 	var changingNote:Bool = false;
 	override function update(elapsed:Float) {

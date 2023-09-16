@@ -71,7 +71,7 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 			'Desactivalo Si Tienes PC De Bajos Recursos!',
 			'funiShaders',
 			'bool',
-			true);
+			false);
 		addOption(option);
         #end
 

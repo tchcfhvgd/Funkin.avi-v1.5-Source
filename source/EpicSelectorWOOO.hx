@@ -143,8 +143,8 @@ class EpicSelectorWOOO extends MusicBeatState {
 
         changeSelection();
 
-		#if mobileC
-		addVirtualPad(LEFT_FULL, A_B);
+		#if android
+		addVirtualPad(FULL, A_B);
 		#end
         super.create();
     }

@@ -46,8 +46,8 @@ class AndroidControlsMenu extends MusicBeatState
 		add(bg);
 
 		var titleText:Alphabet = new Alphabet(75, 60, "Android Controls", true);
-		titleText.addX = 0.6;
-		titleText.addY = 0.6;
+		titleText.xAdd = 0.6;
+		titleText.yAdd = 0.6;
 		titleText.alpha = 0.4;
 		add(titleText);
 

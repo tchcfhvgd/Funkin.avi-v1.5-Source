@@ -2143,7 +2143,8 @@ class PlayState extends MusicBeatState
 		doof.cameras = [camHUD];
 
 		#if android
-		androidc.visible = true;
+		addAndroidControls();
+		androidc.visible = false;
 		#end
 
 		// if (SONG.song == 'South')
@@ -3031,6 +3032,10 @@ class PlayState extends MusicBeatState
 		if(ret != FunkinLua.Function_Stop) {
 			if (skipCountdown || startOnTime > 0) skipArrowStartTween = true;
 
+			#if android
+			androidc.visible = true;
+			#end
+			
 			generateStaticArrows(0);
 			generateStaticArrows(1);
 			for (i in 0...playerStrums.length) {

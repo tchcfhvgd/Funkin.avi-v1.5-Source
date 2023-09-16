@@ -4182,7 +4182,7 @@ class PlayState extends MusicBeatState
 			iconP1.swapOldIcon();
 		}
 
-		if(FlxG.keys.justPressed.SPACE || _vpad.buttonA.justPressed && shootin && canDodge) {
+		if(FlxG.keys.justPressed.SPACE && shootin && canDodge) {
 			dodged = true;
 			canDodge = false;
 			new FlxTimer().start(1, function(tmr:FlxTimer) {

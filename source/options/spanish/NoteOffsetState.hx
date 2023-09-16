@@ -214,6 +214,10 @@ class NoteOffsetState extends MusicBeatState
 		grain.scale.y = 1.1;
 		add(grain);
 		
+	#if android
+	addVirtualPad(FULL, A_B_C);
+	#end
+		
 		super.create();
 	}
 
@@ -312,7 +316,7 @@ class NoteOffsetState extends MusicBeatState
 				}
 			}
 
-			if(controls.RESET)
+			if(controls.RESET #if android || _virtualpad.buttonC.justPressed #end)
 			{
 				for (i in 0...ClientPrefs.comboOffset.length)
 				{
@@ -350,7 +354,7 @@ class NoteOffsetState extends MusicBeatState
 				updateNoteDelay();
 			}
 
-			if(controls.RESET)
+			if(controls.RESET #if android || _virtualpad.buttonC.justPressed #end)
 			{
 				holdTime = 0;
 				barPercent = 0;

@@ -62,7 +62,7 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 		addOption(option);
 
 		option.minValue = 60;
-		option.maxValue = 240;
+		option.maxValue = 64;
 		option.displayFormat = '%v FPS';
 		option.onChange = onChangeFramerate;
 		
@@ -71,7 +71,7 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 			'If checked, you will see some cool visuals.\n(TURN THIS OFF IF YOUR DEVICE CRASHES WITH SHADERS ON)',
 			'funiShaders',
 			'bool',
-			true);
+			false);
 		addOption(option);
         #end
 

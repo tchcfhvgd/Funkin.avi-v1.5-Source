@@ -5,6 +5,7 @@ import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
 import flixel.text.FlxText;
+import flixel.addons.transition.FlxTransitionableState;
 import flixel.group.FlxSpriteGroup;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.util.FlxColor;
@@ -214,7 +215,11 @@ class NoteOffsetState extends MusicBeatState
 		grain.scale.y = 1.1;
 		add(grain);
 		
-		super.create();
+		#if android
+		addVirtualPad(FULL, A_B_C);
+		#end
+
+                super.create();
 	}
 
 	var holdTime:Float = 0;
@@ -312,7 +317,7 @@ class NoteOffsetState extends MusicBeatState
 				}
 			}
 
-			if(controls.RESET)
+			if(controls.RESET #if android || _virtualpad.buttonC.justPressed #end)
 			{
 				for (i in 0...ClientPrefs.comboOffset.length)
 				{
@@ -350,7 +355,7 @@ class NoteOffsetState extends MusicBeatState
 				updateNoteDelay();
 			}
 
-			if(controls.RESET)
+			if(controls.RESET #if android || _virtualpad.buttonC.justPressed #end)
 			{
 				holdTime = 0;
 				barPercent = 0;

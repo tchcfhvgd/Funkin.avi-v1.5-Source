@@ -7,6 +7,7 @@ import flash.text.TextField;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.addons.display.FlxGridOverlay;
+import flixel.addons.transition.FlxTransitionableState;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.math.FlxMath;
 import flixel.text.FlxText;
@@ -126,7 +127,7 @@ class SpanishOption extends MusicBeatState
 		add(grain);
 		
 		#if android
-		addVirtualPad(UP_DOWN, A_B_C);
+		addVirtualPad(UP_DOWN, A_B_X_Y);
 		#end
 		
 		super.create();
@@ -152,18 +153,22 @@ class SpanishOption extends MusicBeatState
 			MusicBeatState.switchState(new MainMenuState());
 		    }
 
+                #if android
+		if (_virtualpad.buttonX.justPressed) {
+			FlxTransitionableState.skipNextTransIn = true;
+			FlxTransitionableState.skipNextTransOut = true;
+			MusicBeatState.switchState(new android.AndroidControlsMenu());
+		}
+		if (_virtualpad.buttonY.justPressed) {
+			removeVirtualPad();
+			openSubState(new android.HitboxSettingsSubState());
+		}
+		#end
+
+		
 		if (controls.ACCEPT) {
 			openSelectedSubstate(options[curSelected]);
 		}
-		
-		#if android
-		if (virtualPad.buttonC.justPressed) {
-			#if android
-			removeVirtualPad();
-			#end
-			openSubState(new android.AndroidControlsSubState());
-		}
-		#end
 	}
 	
 	function changeSelection(change:Int = 0) {

@@ -222,7 +222,7 @@ class PauseSpanishState extends MusicBeatSubstate
 
 		cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
 
-		#if mobileC
+		#if android
 		addVirtualPad(UP_DOWN, A);
 		#end
 	}

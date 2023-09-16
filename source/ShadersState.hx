@@ -66,7 +66,7 @@
             grain.scale.y = 1.1;
             add(grain);
             
-        #if mobileC
+        #if android
 		addVirtualPad(NONE, A_B);
 		#end 
             

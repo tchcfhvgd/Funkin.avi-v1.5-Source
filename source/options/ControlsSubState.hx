@@ -111,7 +111,10 @@ class ControlsSubState extends MusicBeatSubstate {
 			}
 		}
 		changeSelection();
-
+                #if android
+	        addVirtualPad(FULL, A_B);
+	        #end
+		
 		var scratchStuff:FlxSprite = new FlxSprite();
 		scratchStuff.frames = Paths.getSparrowAtlas('funkinAVI-filters/scratchShit');
 		scratchStuff.animation.addByPrefix('idle', 'scratch thing 1', 24, true);
@@ -130,10 +133,6 @@ class ControlsSubState extends MusicBeatSubstate {
 		grain.scale.y = 1.1;
 		add(grain);
 	}
-
-	#if android
-	addVirtualPad(FULL, A_B);
-	#end
 
         var leaving:Bool = false;
 	var bindingTime:Float = 0;
